@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HPD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html,
+        body {
+            height: 100vh;
+            background: #eee;
+
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #play {
+            direction: rtl;
+            text-align: center;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 175px;
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(to left top, #003fbe, rgb(0 204 255));
+            color: #fff;
+            transition: .5s ease;
+        }
+
+        .bxs-gift:before {
+            font-size: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="play">
+        <i class='bx bxs-gift bx-tada'></i>
+    </div>
+    <script>
+        let p = false;
+        let btn = document.getElementById("play");
+        var audio = new Audio('hpd.m4a');
+        btn.onclick = function () {
+            p = !p;
+            if (p) {
+                btn.innerText = `طبعا اعتذر عن الكلمات,
+                 ردت اعايدج على طيرقتي 
+                , وتعرفين الاغاني كلهن هيج كلماتهن sorry`
+                audio.play();
+                audio.currentTime = 102;
+            } else {
+                btn.innerHTML = "<i class='bx bxs-gift bx-tada' ></i>"
+                audio.pause();
+            }
+        }
+    </script>
+</body>
+
+</html>
